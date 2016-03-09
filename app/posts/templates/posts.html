@@ -1,0 +1,58 @@
+<h2 class="page-header">Showing {{posts.length}} posts</h2>
+
+<div ng-repeat = "post in posts | limitTo:3:postsPage">
+
+<article>
+
+					<header>
+						<h2>
+							<a href="#/post/{{post.urlPath}}">{{ post.title}}</a>
+						</h2>
+
+						<p>
+							<small class="glyphicon glyphicon-user"></small>
+							by <a href="#">{{ post.author }}</a>
+						</p>
+						<p>
+							<small class="glyphicon glyphicon-time"></small>
+							Posted on {{ post.date | date}}
+						</p>
+					</header>
+
+					<!-- Post Description -->
+					<p>{{ post.description }}</p>
+					<br>
+
+					<footer class="clearfix">
+						<p class="pull-left">
+							<b>Tags:&nbsp;</b>
+							<span>
+								<a href="#" class="label label-default">{{ post.tags[0] }}</a>
+							</span>
+							<span>
+								<a href="#" class="label label-default">{{ post.tags[1] }}</a>
+							</span>
+						</p>
+
+						<a class="btn btn-primary pull-right" href="#/post/{{ post.urlPath}}">
+							Read More <i class="glyphicon glyphicon-chevron-right"></i>
+						</a>
+					</footer>
+					<hr>
+				</article>
+
+			
+
+
+				</div>
+				
+
+				<ul class="col-md-12 pager">
+					<li class="previous">
+						<a href="#/posts/{{ nextPage() }}">&larr; Older</a>
+					</li>
+					<li class="next">
+						<a href="#">Newer &rarr;</a>
+					</li>
+				</ul>
+				</div>
